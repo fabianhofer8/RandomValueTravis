@@ -15,6 +15,7 @@ before_install:
     - yes | sdkmanager --licenses
 
 before_script:
+    - echo start
     - echo no | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86" -d "pixel_8_pro"
     - $ANDROID_HOME/emulator/emulator -avd test -no-window -no-audio -gpu off &
     - android-wait-for-emulator
