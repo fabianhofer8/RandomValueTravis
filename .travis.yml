@@ -1,6 +1,8 @@
 sudo: required
 
 language: android
+jdk: openjdk18
+
 dist: trusty
 android:
   components:
