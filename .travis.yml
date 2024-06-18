@@ -1,17 +1,5 @@
-sudo: required
 language: android
-jdk: oraclejdk8
 dist: trusty
 
-android:
-  licenses:
-    - 'android-sdk-preview-license-.+'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
- 
-components:
-    - tools
-    - platform-tools
-    - build-tools-30.0.3
-    - android-30
-    - sys-img-x86-android-30 
+script:
+  - ./gradlew build --scan -s
