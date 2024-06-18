@@ -18,3 +18,7 @@ licenses:
   - 'android-sdk-preview-license-.+'
   - 'android-sdk-license-.+'
   - 'google-gdk-license-.+'
+
+  before_install:
+    - export JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64  # Adjust the path if needed
+  
