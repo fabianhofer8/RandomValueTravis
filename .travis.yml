@@ -16,6 +16,8 @@ android:
 
 before_install:
  - chmod +x gradlew
+ - export JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64
+ - export PATH=$JAVA_HOME/bin:$PAT
 
 script: ./gradlew test
 
