@@ -14,11 +14,13 @@ android:
     - extra-google-m2repository
     - addon-google_apis-google-21
 
+licenses:
+  - 'android-sdk-license-.+'
+  - 'google-gdk-license-.+'
 before_install:
   - chmod +x ./gradlew
   - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
   - export PATH=$JAVA_HOME/bin:$PATH
-  - yes | sdkmanager --licenses
-  - sdkmanager "platforms;android-34" "build-tools;34.0.0"
+
 
 script: ./gradlew clean build
