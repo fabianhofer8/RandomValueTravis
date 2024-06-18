@@ -1,27 +1,21 @@
 language: android
-dist: xenial  # oder focal
 jdk:
   - openjdk11
-
 android:
   components:
     - tools
+    - tools
     - platform-tools
-    - build-tools-30.0.3
-    - android-30
+    - build-tools-28.0.3
+    - android-28
+    - extra-android-support
+    - extra-google-google_play_services
     - extra-android-m2repository
     - extra-google-m2repository
-
-  licenses:
-    - 'android-sdk-preview-license-.+'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
+    - addon-google_apis-google-21
 
 before_install:
-  - sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt1-dev
-  - yes | sdkmanager "platforms;android-30"
-  - yes | sdkmanager "build-tools;30.0.3"
-  - yes | sdkmanager --licenses
+ - chmod +x gradlew
 
-script:
-  - ./gradlew clean build
+script: ./gradlew test
+
