@@ -2,10 +2,6 @@ language: android
 jdk:
   - openjdk17
 
-env:
-  global:
-    - ANDROID_SDK_ROOT=/usr/local/android-sdk
-
 android:
   components:
     - tools
@@ -17,16 +13,11 @@ android:
     - extra-android-m2repository
     - extra-google-m2repository
     - addon-google_apis-google-21
-licenses:
-  - android-sdk-preview-license-.+
-  - android-sdk-license-.+
-  - google-gdk-license-.+
-before_install:
-  #- gem install fir-cli
-  - chmod +x gradlew
-  #- mkdir "$ANDROID_HOME/licenses" || true
-  - yes | sdkmanager --update
-  #- yes | sdkmanager --licenses
-  - yes | sdkmanager "platforms;android-34"
 
-script: ./gradlew clean build
+before_install:
+  - chmod +x ./gradlew
+  - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+  - export PATH=$JAVA_HOME/bin:$PATH
+
+
+script: gradle build
