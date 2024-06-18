@@ -18,9 +18,9 @@ android:
     - 'google-gdk-license-.+'
 
 before_install:
-  - yes | sdkmanager "platforms;android-30"
-  - yes | sdkmanager "build-tools;30.0.3"
-  - yes | sdkmanager --licenses
+  - sdkmanager "platforms;android-30"
+  - sdkmanager "build-tools;30.0.3"
+  - sdkmanager --licenses
 
 script:
   - ./gradlew clean build
