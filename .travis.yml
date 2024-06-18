@@ -18,9 +18,10 @@ android:
     - 'google-gdk-license-.+'
 
 before_install:
-  - sdkmanager "platforms;android-30"
-  - sdkmanager "build-tools;30.0.3"
-  - sdkmanager --licenses
+  - sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt1-dev
+  - yes | sdkmanager "platforms;android-30"
+  - yes | sdkmanager "build-tools;30.0.3"
+  - yes | sdkmanager --licenses
 
 script:
   - ./gradlew clean build
