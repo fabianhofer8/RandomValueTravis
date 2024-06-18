@@ -1,6 +1,6 @@
 language: android
 jdk:
-  - openjdk11
+  - openjdk18
 android:
   components:
     - tools
@@ -22,5 +22,5 @@ before_install:
  - chmod +x ./gradlew
  
 
-script: ./gradlew clean build
+
 
