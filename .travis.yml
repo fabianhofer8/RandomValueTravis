@@ -20,4 +20,4 @@ before_install:
   - export PATH=$JAVA_HOME/bin:$PATH
 
 
-script: gradle build
+
