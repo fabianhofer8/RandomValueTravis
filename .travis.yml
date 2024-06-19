@@ -20,5 +20,12 @@ licenses:
   - 'google-gdk-license-.+'
 
 before_install:
-  - export JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64  # Adjust the path if needed
+  - chmod +x ./gradlew
+  - export JAVA_HOME=/usr/lib/jvm/java-18-openjdk-amd64
+
+script:
+  - script: 
+    - ./gradlew clean build
+    - ./gradlew test
+
   
